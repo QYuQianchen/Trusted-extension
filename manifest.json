@@ -1,0 +1,24 @@
+{
+    "description": "Demonstrating interception",
+    "manifest_version": 2,
+    "name": "interception-demo",
+    "version": "1.0",
+  
+    "permissions": ["activeTab", "webRequest", "webNavigation", "<all_urls>"],
+  
+    "background": {
+      "scripts": ["background.js"]
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["page-eater.js"]
+      }
+    ],
+
+    "web_accessible_resources": [
+      "img/*.gif",
+      "popup.html" 
+    ]
+  }
